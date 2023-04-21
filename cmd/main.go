@@ -126,6 +126,9 @@ func process(ctx context.Context) error {
 
 func main() {
 	flag.Parse()
+	if len(os.Args) <= 1 {
+		flag.Usage()
+	}
 
 	ctx := context.Background()
 	if err := process(ctx); err != nil {
